@@ -32,3 +32,5 @@ for age in ages:
 
 for laugh in laughs:
      print(laugh)
+
+     5
