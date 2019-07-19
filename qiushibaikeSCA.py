@@ -22,7 +22,7 @@ laughs = re.findall('<i class="number">(.*?)</i>',html,re.S)
  #   print(name.strip())
 
 for content in contents:
-    print(content)
+    print(content.replace('<br/>',''))
 
 for fm in fms:
     print(fm)
