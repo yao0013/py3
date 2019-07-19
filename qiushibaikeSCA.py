@@ -17,9 +17,8 @@ ages = re.findall('div class="articleGender.*?Icon">(.*?)</div',html,re.S)
 
 laughs = re.findall('<i class="number">(.*?)</i>',html,re.S)
 
-
-#for name in names:
- #   print(name.strip())
+'''for name in names:
+    print(name.strip())
 
 for content in contents:
     print(content.replace('<br/>',''))
@@ -31,6 +30,6 @@ for age in ages:
      print(age)
 
 for laugh in laughs:
-     print(laugh)
+     print(laugh)'''
 
-     5
+print('{} is {} '.format(names.strip(),contents.replace('<br/>','')))
