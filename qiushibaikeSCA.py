@@ -18,8 +18,8 @@ def  prash_list(url):
 
      laughs = re.findall('<i class="number">(.*?)</i>',html,re.S)
 
-     for name, content, fm, age, laugh in zip(names, contents, fms, ages, laughs):
-          print(f'作者{name}{content.replace('<br/>','')}{fm}好笑数：{laugh})
+     for name, content, laugh in zip(names, contents, laughs):
+          print(f"作者:{name.strip()}  好笑数：{laugh.strip()} {content.replace('<br/>','') }  ")
 
 if __name__ =="main__":
 
