@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*- 
 import requests
 import re
 
@@ -11,13 +12,14 @@ names = re.findall('<h2>(.*?)</h2>',html,re.S)
 
 contents = re.findall('<span>.\n(.*?)</span>',html,re.S)
 
+
 fms = re.findall('div class="articleGender(.*?)Icon"',html,re.S)
 
 ages = re.findall('div class="articleGender.*?Icon">(.*?)</div',html,re.S)
 
-laughs = re.findall('<i class="number">(.*?)</i>',html,re.S)
+laughs = re.findall('<span class="stats-vote"><i class="number">(.*?)</i> 好笑',html,re.S)
 
-'''for name in names:
+for name in names:
     print(name.strip())
 
 for content in contents:
@@ -30,6 +32,6 @@ for age in ages:
      print(age)
 
 for laugh in laughs:
-     print(laugh)'''
+     print(laugh)
 
-print('{} is {} '.format(names.strip(),contents.replace('<br/>','')))
+#print('{} is {} '.format(names.strip(),contents.replace('<br/>','')))
