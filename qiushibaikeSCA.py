@@ -4,10 +4,10 @@ import re
 
 def  prash_list(url)
 
-      proxies = {
+     proxies = {
       "http":"http://ip:端口号"
       "https":"https://ip:端口号"
-      }
+     }
 
 
      resq = requests.get(url=url，proxies=proxies)
