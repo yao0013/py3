@@ -2,15 +2,16 @@ import requests
 import re
 
 
-def  prash_list(url)
+'''def  prash_list(url)
 
      proxies = {
-      "http":"http://ip:端口号"
-      "https":"https://ip:端口号"
-     }
+      #"http":"http://ip:端口号"
+      "https":"https://113.128.29.232:9999"
+     }'''
 
-
-     resq = requests.get(url=url，proxies=proxies)
+     url = http://www.qiushibaike.com/text
+     
+     resq = requests.get(url=url，proxies=https://120.83.104.108:9999)
 
      html = resq.text
 
@@ -40,10 +41,10 @@ for age in ages:
 for laugh in laughs:
      print(laugh)
 
-for name, content, fm, age, laugh in zip(names, contents, fms, ages, laughs):
+#for name, content, fm, age, laugh in zip(names, contents, fms, ages, laughs):
     print(f" {name} , {actor.strip()} , {time} , 评分：{c}{n} ")
 
 
-if __name__ =="main__":
+#if __name__ =="main__":
 
-     url = [f'']
+#     url = [f'']
