@@ -2,15 +2,9 @@ import requests
 import re
 
 
-def  prash_list(url)
-
-     proxies = {
-      "http":"http://ip:端口号"
-      "https":"https://ip:端口号"
-     }
-
-
-     resq = requests.get(url=url，proxies=proxies)
+def  prash_list(url):
+     
+     resq = requests.get(url=url)
 
      html = resq.text
 
@@ -24,26 +18,12 @@ def  prash_list(url)
 
      laughs = re.findall('<i class="number">(.*?)</i>',html,re.S)
 
-
-for name in names:
-     print(name.strip())
-
-for content in contents:
-    print(content.replace('<br/>',''))
-
-for fm in fms:
-    print(fm)
-
-for age in ages:
-     print(age)
-
-for laugh in laughs:
-     print(laugh)
-
-for name, content, fm, age, laugh in zip(names, contents, fms, ages, laughs):
-    print(f" {name} , {actor.strip()} , {time} , 评分：{c}{n} ")
-
+     for name, content, fm, age, laugh in zip(names, contents, fms, ages, laughs):
+          print(f'作者{name}{content.replace('<br/>','')}{fm}好笑数：{laugh})
 
 if __name__ =="main__":
 
-     url = [f'']
+     urls = [f'https://www.qiushibaike.com/text/page/{i}/' for i in range(1,10,1)]
+
+     for url in urls:
+          prash_list(url)
