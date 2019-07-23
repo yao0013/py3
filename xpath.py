@@ -7,16 +7,16 @@ def qs_list(url):
 
     html = etree.HTML(resq.text)
 
-    titles = html.xpath("//div[@class='cont']/p[1]/a/b")
+    titles = html.xpath("//div[@class='cont']/p[1]/a/b/text()")
 
-    times =  html.xpath("//p[@class='source']/a[1]")
+    times =  html.xpath("//p[@class='source']/a[1]/text()")
     
-    authurs = html.xpath("//p[@class='source']/a[2]")
+    authurs = html.xpath("//p[@class='source']/a[2]/text()")
     
-    contents = html.xpath("//div[@class='cont']/div[@id]")
+    contents = html.xpath("//div[@class='cont']/div[@id]/text()")
 
     for title,time,authur,content in zip(titles,times,authurs,contents):
-        print(f"{title}{time}{authur}{content}")
+        print(f"{title} 朝代：{time} 作者：{authur} {content.strip()}")
 
 if __name__ == "__main__":
 
