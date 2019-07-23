@@ -16,7 +16,9 @@ def qs_list(url):
     contents = html.xpath("//div[@class='cont']/div[@id]/text()")
 
     for title,time,authur,content in zip(titles,times,authurs,contents):
-        print(f"{title} 朝代：{time} 作者：{authur} {content.strip()}")
+        print(f"{title} 朝代：{time} 作者：{authur} ")
+        print(f"{content}")
+        print("--------------------------------------------")
 
 if __name__ == "__main__":
 
