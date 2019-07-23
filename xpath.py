@@ -15,6 +15,8 @@ def qs_list(url):
     
     contents = html.xpath("/html/body/div[@class='main3']/div[@class='left']/div[@class='sons']/div[@class='cont']/div[@id]/text()")
 
+    #pages = html.xpath()
+
     for title,time,authur,content in zip(titles,times,authurs,contents):
         print(f"{title} 朝代：{time} 作者：{authur} ")
         print(f"{content.strip()}")
