@@ -13,11 +13,11 @@ def qs_list(url):
     
     authurs = html.xpath("//p[@class='source']/a[2]/text()")
     
-    contents = html.xpath("//div[@class='cont']/div[@id]/text()")
+    contents = html.xpath("/html/body/div[@class='main3']/div[@class='left']/div[@class='sons']/div[@class='cont']/div[@id]/text()")
 
     for title,time,authur,content in zip(titles,times,authurs,contents):
         print(f"{title} 朝代：{time} 作者：{authur} ")
-        print(f"{content}")
+        print(f"{content.strip()}")
         print("--------------------------------------------")
 
 if __name__ == "__main__":
