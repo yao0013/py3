@@ -1,5 +1,6 @@
 from lxml import etree
 import requests
+import re
 
 def qs_list(url):
 
@@ -7,31 +8,21 @@ def qs_list(url):
 
     html = etree.HTML(resq.text)
 
+    htmls = resq.text
+
     titles = html.xpath("//div[@class='cont']/p[1]/a/b/text()")
 
     times =  html.xpath("//p[@class='source']/a[1]/text()")
     
     authurs = html.xpath("//p[@class='source']/a[2]/text()")
     
-    contents = html.xpath("//div[@class='contson']/p/text()")
-
-    #contents = html.xpath("//div[@class='contson']/br[1]/text()")
-
-    #contents2 = html.xpath("//div[@class='contson']/br/text()")
-
-    #contents3 = html.xpath("//div[@class='contson']/br/br/text()")
-
-    #contents.xpath('string(.)')
-
-    #c1 = contents[0].xpath('string(.)').strip()
-    
+    contents = re.findall('<div class="contson" id="contson.*?">(.*?)</div>',htmls,re.S)
 
 
-    #pages = html.xpath()
 
     for title,time,authur,content in zip(titles,times,authurs,contents):
         print(f"{title} 朝代：{time} 作者：{authur} ")
-        print(f"{content}")
+        print(f"{content.replace('<br />','')}")
         print("--------------------------------------------")
 
 if __name__ == "__main__":
