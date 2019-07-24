@@ -25,4 +25,4 @@ if __name__ == "main__":
      urls = [f'https://www.qiushibaike.com/text/page/{i}/' for i in range(1,10,1)]
 
      for url in urls:
-          prash_list(url)
+          pa_list(url)

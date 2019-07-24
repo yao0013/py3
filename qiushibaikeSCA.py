@@ -1,17 +1,16 @@
 import requests
 import re
 
-url = "https://www.qiushibaike.com/text/"
 
 def  prash_list(url):
      
      resq = requests.get(url=url)
 
-     fms = re.findall('div class="articleGender(.*?)Icon"',html,re.S)
+     html = resq.text
 
-     ages = re.findall('div class="articleGender.*?Icon">(.*?)</div',html,re.S)
+     names = re.findall('<h2>(.*?)</h2>',html,re.S)
 
-     laughs = re.findall('<i class="number">(.*?)</i>',html,re.S)
+     contents = re.findall('<span>.\n(.*?)</span>',html,re.S)
 
      fms = re.findall('div class="articleGender(.*?)Icon"',html,re.S)
 
@@ -22,7 +21,7 @@ def  prash_list(url):
      for name, content, laugh in zip(names, contents, laughs):
           print(f"作者:{name.strip()}  好笑数：{laugh.strip()} {content.replace('<br/>','') }  ")
 
-#if __name__ =="main__":
+if __name__ == "main__":
 
      urls = [f'https://www.qiushibaike.com/text/page/{i}/' for i in range(1,10,1)]
 

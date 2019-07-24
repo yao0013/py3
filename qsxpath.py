@@ -7,27 +7,19 @@ def qs_list(url):
 
     html = etree.HTML(resq.text)
 
-    titles = html.xpath("//div[@class='cont']/p[1]/a/b/text()")
+    titles = html.xpath("//h2/text()")
 
     times =  html.xpath("//p[@class='source']/a[1]/text()")
     
     authurs = html.xpath("//p[@class='source']/a[2]/text()")
     
-    contents = html.xpath("//div[@class='contson']/p/text()")
-
-    #contents = html.xpath("//div[@class='contson']/br[1]/text()")
-
-    #contents2 = html.xpath("//div[@class='contson']/br/text()")
-
-    #contents3 = html.xpath("//div[@class='contson']/br/br/text()")
+    contents = html.xpath("//div[@class='contson']/text()")
 
     #contents.xpath('string(.)')
 
     #c1 = contents[0].xpath('string(.)').strip()
     
 
-
-    #pages = html.xpath()
 
     for title,time,authur,content in zip(titles,times,authurs,contents):
         print(f"{title} 朝代：{time} 作者：{authur} ")
@@ -36,7 +28,7 @@ def qs_list(url):
 
 if __name__ == "__main__":
 
-    urls = [f'https://www.gushiwen.org/default_{i}.aspx' for i in range(0,9,1)]
+    urls = [f'https://www.qiushibaike.com/text/page/{i}/' for i in range(0,9,1)]
 
     for url in urls:
         qs_list(url)
