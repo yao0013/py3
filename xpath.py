@@ -27,7 +27,7 @@ def qs_list(url):
 
 if __name__ == "__main__":
 
-    urls = [f'https://www.gushiwen.org/default_{i}.aspx' for i in range(0,9,1)]
+    urls = [f'https://www.gushiwen.org/default_{i}.aspx' for i in range(1,10)]
 
     for url in urls:
         qs_list(url)
