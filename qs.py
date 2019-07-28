@@ -3,7 +3,7 @@ import re
 
 def pa_list(url):
 
-    resq = requests.get(url = url)
+    resq = requests.get(url)
 
     html = resq.text
 
