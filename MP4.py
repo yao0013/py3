@@ -12,15 +12,23 @@ def get_url(url):
     return (movies)
 
 def get_magnet(movies):
-    # 遍历列表movies
+
     for movie in movies:
+
         url_2 = movie[1]
+
         movie_name = movie[0]
+
         html2 = requests.get(url=url_2).text
+
         html3 = etree.HTML(html2)
+
         magnet = html3.xpath('//*[@id="fadecon"]/div[1]/ul/li[2]/div/a/@href')
-        # 打印电影名和对应的磁力链接
-        print(movie_name, magnet)
+
+        hrefname = html3.xpath('//*[@id="fadecon"]/div[1]/ul/li[2]/div/a/text()')
+        
+        print(movie_name,'\n',hrefname[0],':', magnet[0],)
+        print("-----------------------------------------------------------------------------")
 
 def main():
     urls = [f'http://www.mp4ba.com/dianying/list_{i}.html' for i in range(1,10)]
