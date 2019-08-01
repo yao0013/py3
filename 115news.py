@@ -8,5 +8,9 @@ url = 'https://yun.115.com/api/1.0/web/1.0/5/news/glist?start=0&limit=20&search_
 
 resq = requests.get(url=url,headers=headers)
 data = resq.json()
-#user_name = data['data']['list']['user_id']
-print(data['data'])
+user_name = data['data']['list']
+print(data['data']['list']['user_name'])
+print('响应解析后的类型：',type(data))
+print('响应解析后的键值对个数：',len(data))
+for key in data: #打印出所有的keys
+    print(key ,end=' ')
