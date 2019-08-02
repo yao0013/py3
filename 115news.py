@@ -10,13 +10,21 @@ url = 'https://yun.115.com/api/1.0/web/1.0/5/news/glist?start=0&limit=100&search
 
 resq = requests.get(url=url,headers=headers)
 data = resq.json()
+
 users = []
-for i in range(1,100):
+for i in range(0,100):
     users.append(data['data']['list'][i]['user_name'])
-dic = {}
+dic = []
 set_list = set(users)
-print(set_list)
+#print(set_list)
 
 for item in set_list:
-    dic.update({item:users.count(item)})
-    print(dic)
+    dic.append(users.count(item))
+#print(dic)
+
+bar = (
+    Bar()
+    .add_xaxis(set_list)
+    .add_yaxis("资讯",dic)
+)
+bar.render()
