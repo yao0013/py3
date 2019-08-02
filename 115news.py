@@ -17,6 +17,6 @@ dic = {}
 set_list = set(users)
 print(set_list)
 
-for item in set_list：
+for item in set_list:
     dic.update({item:users.count(item)})
     print(dic)
