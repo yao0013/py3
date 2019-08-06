@@ -1,5 +1,6 @@
 from lxml import etree
 import requests
+import csv
 
 def douban_list(url):
 

@@ -13,6 +13,8 @@ def get_url(url):
 
 def get_magnet(movies):
 
+    
+
     for movie in movies:
 
         url_2 = movie[1]
@@ -29,6 +31,11 @@ def get_magnet(movies):
         
         print(movie_name,'\n',hrefname[0],':', magnet[0],)
         print("-----------------------------------------------------------------------------")
+        file = open('0804.txt','a',encoding = 'utf- 8')
+        file.write(movie_name+'\n')
+        file.write(hrefname[0]+':'+ magnet[0]+'\n')
+    file. close()
+
 
 def main():
     urls = [f'http://www.mp4ba.com/dianying/list_{i}.html' for i in range(1,10)]
