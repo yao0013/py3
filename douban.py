@@ -27,17 +27,17 @@ def douban_list(url):
 
 def write_list(info_list):
     for info in info_list:
-        with open ('t.csv', 'a+', newline='', encoding='utf8') as f:
+        with open ('douban_list.csv', 'a+', newline='', encoding='utf8') as f:
             writer = csv.writer(f)
             writer.writerow(info)
 
 if __name__ == "__main__":
-    with open ('t.csv', 'w', newline='', encoding='gbk') as f:
+    with open ('douban_list.csv', 'w', newline='', encoding='utf8') as f:
         writer = csv.writer(f)
         headers = ['书名','信息','评分','评价数','金句']
         writer.writerow(headers)
     
-    urls = [ f'https://book.douban.com/top250?start={i}' for i in range(0, 101, 25) ]
+    urls = [ f'https://book.douban.com/top250?start={i}' for i in range(0, 225, 25) ]
     for url in urls:
         info_list = douban_list(url)
         write_list(info_list)
