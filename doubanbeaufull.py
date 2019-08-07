@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
+
 
 def douban_list(url):
 
@@ -19,7 +21,7 @@ def douban_list(url):
 
     words = bful.select("span.inq")
 
-
+    csv_list = {}
     for title,trtitle,contry,mark,say,word in zip(titles,trtitles,conturies,marks,says,words):
         
         title = title.get_text().replace(' ', '').replace('\n', '')
@@ -34,8 +36,9 @@ def douban_list(url):
 
         word = word.get_text().replace(' ', '').replace('\n', '')
 
-        print(title,'\n',trtitle,'\n',contry,'\n',mark,'\n',say,'\n',word,'\n')
-        print('--------------------------------------------------------------------------------------')
+        #print(title,'\n',trtitle,'\n',contry,'\n',mark,'\n',say,'\n',word,'\n')
+        #print('--------------------------------------------------------------------------------------')
+        csv_list.set(title,contry,mark,say,word)
 
 if __name__ == "__main__":
 
