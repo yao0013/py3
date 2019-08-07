@@ -27,7 +27,7 @@ def douban_list(url):
 
 def write_list(info_list):
     for info in info_list:
-        with open ('t.csv', 'a+', newline='', encoding='gbk') as f:
+        with open ('t.csv', 'a+', newline='', encoding='utf8') as f:
             writer = csv.writer(f)
             writer.writerow(info)
 
