@@ -28,17 +28,17 @@ def get_down(wallpaper_urls):
 
         
         
-    for download in downloads: 
-        resp = requests.get (download)
-        if not os.path.exists('./pics'):
+        for download in downloads: 
+            resp = requests.get (download)
+            if not os.path.exists('./pics'):
              os.makedirs('./pics')
  
-        with open('./pics/name','wb') as fp:
-            fp.write(resp.content)
+            with open('./pics/name','wb') as fp:
+             fp.write(resp.content)
 
 
 def main():
-    urls = [f'https://wallhaven.cc/toplist?page={i}' for i in range(1,3)]
+    urls = [f'https://wallhaven.cc/toplist?page={i}' for i in range(1,4)]
     for url in urls:
         wallpaper_urls = get_url(url)
         get_down(wallpaper_urls)
