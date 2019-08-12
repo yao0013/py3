@@ -1,9 +1,10 @@
 import requests
 from lxml import etree
+import os
 
 def get_url(url):
 
-    html1 = requests.get(url).text
+    html1 = requests.get(url,headers={'Origin': 'https://wallhaven.cc','Referer': 'https://wallhaven.cc/w/q6lm7r','User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}).text
     html = etree.HTML(html1)
     #wallpaper_name = html.xpath(
     #    '//ul/li/figure/a/@title')
@@ -15,17 +16,24 @@ def get_down(wallpaper_urls):
 
     for wurl in wallpaper_urls:
 
-        html2 = requests.get(url=wurl).text
+        html2 = requests.get(url=wurl,headers={'Origin': 'https://wallhaven.cc','Referer': 'https://wallhaven.cc/w/q6lm7r','User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}).text
 
         html3 = etree.HTML(html2)
 
-        download = html3.xpath('//section/div/img/@src')
+        downloads = html3.xpath('//section/div/img/@src')
+
+        names = html3.xpath('//section/div/img/@src')
+
+        name = str(names).split('\/')
+
         
+        
+    for download in downloads: 
         resp = requests.get (download)
         if not os.path.exists('./pics'):
-            os.makedirs('./pics')
+             os.makedirs('./pics')
  
-        with open('./pics/download','wb') as fp:
+        with open('./pics/name','wb') as fp:
             fp.write(resp.content)
 
 
