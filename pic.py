@@ -31,7 +31,7 @@ def get_down(wallpaper_urls):
 def main():
     if not os.path.exists('./pics'):
         os.makedirs('./pics')
-    urls = [f'https://wallhaven.cc/toplist?page={i}' for i in range(1,4)]
+    urls = [f'https://wallhaven.cc/toplist?page={i}' for i in range(1,10)]
     for url in urls:
         wallpaper_urls = get_url(url)
         get_down(wallpaper_urls)
