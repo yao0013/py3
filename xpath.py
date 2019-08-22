@@ -1,6 +1,6 @@
 from lxml import etree
 import requests
-import re
+import re,time
 
 def qs_list(url):
 
@@ -16,7 +16,7 @@ def qs_list(url):
     
     authurs = html.xpath("//p[@class='source']/a[2]/text()")
     
-    contents = re.findall('<div class="contson" id="contson.*?">(.*?)</div>',htmls,re.S)
+    contents = html.xpath("//div[@class='cont']/div[@id]/text()")
 
 
 
@@ -26,8 +26,11 @@ def qs_list(url):
         print("--------------------------------------------")
 
 if __name__ == "__main__":
+    start = time.time()
 
     urls = [f'https://www.gushiwen.org/default_{i}.aspx' for i in range(1,10)]
 
     for url in urls:
         qs_list(url)
+    
+    print('总耗时：%.5f秒' % float(time.time()-start))
