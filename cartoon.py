@@ -7,7 +7,7 @@ headers = {
     'Connection': 'keep-alive',
     'Date': 'Mon, 26 Aug 2019 14:24:28 GMT',
     'Expires': 'Tue, 27 Aug 2019 10:34:35 GMT',
-    'Server':' openresty',
+    #'Server':' openresty',
     'Vary': 'Accept-Encoding',
     'Via':' http/1.1 zats (zats4 [cRs f ])'
 }
