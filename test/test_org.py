@@ -1,4 +1,5 @@
 import requests
+import pytest
 
 def get_group():
     headers = {
@@ -15,10 +16,13 @@ def get_group():
 
     for i in range(0,2):
         gp.append(data['data'][i]['gp_name'])
-    print(gp)
+   
     return gp
 
 
 def test_gp():
     assert '广东一一五科技股份有限公司' in get_group()
+
+if __name__ == "__main__":
+    pytest.main(['-q','test_org.py','--html=report.html'])
 

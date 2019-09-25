@@ -1,3 +1,4 @@
 [
+  "test/test_001.py::test_answer",
   "test/test_org.py::test_gp"
 ]
