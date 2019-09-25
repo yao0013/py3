@@ -2,15 +2,15 @@ import requests
 from faker import Faker
 
 f=Faker(locale='zh_CN')
-def add_member():
-    headers = {
+'''def add_member():'''
+headers = {
 
-    }
-    data = {
+}
+data = {
 
-    }
+}
 
-    url = ''
+url = ''
 
-    for i in range(1500):
-        resq = requests.post(url=url,data=data.headers=headers)
+for i in range(1500):
+    resq = requests.post(url=url,data=data.headers=headers)
