@@ -1,8 +1,9 @@
 import requests
+import pytest
 
 def get_group():
     headers = {
-    'Cookie':'acw_tc=784e2c9c15690777587752979e78f7b4ff102a05ee32ecf233a48e8bb39be5; UID=84838689_A1_1569336964; CID=925648400cb421969824dcc4ddaa6a62; SEID=a4c9a6902cdc5892974440f50db959c27932d0587c4533b4c4f6d724d56ad359456fd47ff040aa554bda0c0103ff8313394e44fcb6eba00650a29847'
+    'Cookie':'Hm_lvt_17965aa5d4a3ebae4c8b68932b9557a8=1562639526; acw_tc=784e2c9a15692356753077994e43bd7ec20a68c3db152d8e9303526a9bdd47; UID=84838689_A1_1569382448; CID=de2b3ab61067e8ac5fbeecc612b80d12; SEID=f14384c17893a6c27a8bb5c76fcc0636759e7c2dcb7592da032ae99c4e923dff11a0c60ea263c1f911b9e31514228d7bd71107677087a660fc3862e4'
     }
 
     url = 'https://yun.115.com/5/portal/groups'
@@ -22,3 +23,5 @@ def get_group():
 def test_gp():
     assert '广东一一五科技股份有限公司' in get_group()
 
+if __name__ == "__main__":
+    pytest.main(['-q','test\\test_org.py','--html=report.html'])
