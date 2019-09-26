@@ -16,7 +16,7 @@ def get_group():
 
     for i in range(0,2):
         gp.append(data['data'][i]['gp_name'])
-    print(gp)
+   
     return gp
 
 
