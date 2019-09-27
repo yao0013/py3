@@ -1,20 +1,21 @@
 import requests
 
 def regedit():
-    name = input('请输入注册名')
+    name = str(input('请输入注册名'))
     data = {
-    'username':'%s'%name,
+    'username':name
     }
 
     headers = {
-    'cookie':'Hm_lvt_3b0150c3aee6054cf944ea6c8f8a7392=1569506539,1569506590; Hm_lpvt_3b0150c3aee6054cf944ea6c8f8a7392=1569506590',
+    'cookie':'Hm_lpvt_3b0150c3aee6054cf944ea6c8f8a7392=1569547590; Hm_lvt_3b0150c3aee6054cf944ea6c8f8a7392=1569547590'
     }
 
-    url = 'https://www.charles.ren/'
+    url = 'https://www.charles.ren/api/licenseKey/generate'
 
     r = requests.post(url=url,headers=headers,data=data)
-
     back = r.json()['data']
-    print(back)
+
+   
+    print(f'注册码是{back}')
 
 regedit()
