@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "G:\\py3.7.4\\python.exe",
     "gitlab.removeSourceBranch": true,
     "python.testing.pytestArgs": [
         "test"

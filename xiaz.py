@@ -1,14 +1,17 @@
-c
-'''for i in range(5):
-    res_comments = requests.get('https://c.y.qq.com/base/fcgi-bin/fcg_global_comment_h5.fcg?g_tk=5381&loginUin=0&hostUin=0&format=json&inCharset=utf8&outCharset=GB2312&notice=0&platform=yqq.json&needNewCode=0&cid=205360772&reqtype=2&biztype=1&topid=102065756&cmd=6&needmusiccrit=0&pagenum='+str(i)+'&pagesize=15&lasthotcommentid=song_102065756_3202544866_44059185&domain=qq.com&ct=24&cv=10101010')
-    # 调用get方法，下载评论列表
-    json_comments = res_comments.json()
-    # 使用json()方法，将response对象，转为列表/字典
-    list_comments = json_comments['comment']['commentlist']
-    # 一层一层地取字典，获取评论列表
-    for comment in list_comments:
-    # list_comments是一个列表，comment是它里面的元素
-        print(comment['rootcommentcontent'])
-        # 输出评论
-        print('-----------------------------------')
-        # 将不同的评论分隔开来'''
+from selenium import  webdriver 
+import time
+from bs4 import BeautifulSoup
+
+'''chrome_options = Options() # 实例化Option对象
+chrome_options.add_argument('--headless') # 对浏览器的设置
+driver = RemoteWebDriver("http://chromedriver.python-class-fos.svc:4444/wd/hub", chrome_options.to_capabilities()) # 声明浏览器对象'''
+driver = webdriver.Chrome() 
+driver.get('https://localprod.pandateacher.com/python-manuscript/hello-spiderman/') # 访问页面
+time.sleep(2) # 等待两秒
+
+labels = driver.find_elements_by_tag_name('label') # 根据标签名提取所有元素
+#print(type(labels)) # 打印labels的数据类型
+for label in labels: # 循环，遍历labels这个列表
+    print(label.text) # 打印labe的文本
+driver.close() # 关闭浏览器
+driver.close() # 关闭浏览器
