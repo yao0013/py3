@@ -1,5 +1,7 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 options = webdriver.ChromeOptions()
 
@@ -20,6 +22,21 @@ password.send_keys('gcloud123!@#')
 button = driver.find_element_by_xpath("/html/body[@class='userLayout']/div[@id='app']/div[@id='userLayout']/div[@class='container']/div[@class='main']/div[@class='wrapper']/div[@class='container']/form[@id='formLogin']/div[@class='ant-row ant-form-item']/div[@class='ant-col ant-form-item-control-wrapper']/div[@class='ant-form-item-control']/span[@class='ant-form-item-children']/button[@class='login-button btn-transition ant-btn ant-btn-primary ant-btn-round ant-btn-lg']")
 button.click()
 time.sleep(5)
+'''users = driver.find_element_by_xpath("/html/body/div[@id='app']/section[@class='layout bg-color ant-layout']/section[@class='ant-layout bg-color sidemenu content-width-Fixed']/header[@class='ant-layout-header ant-header-side-opened']/div[@class='header']/div[@class='user-wrapper vertical-center']/a[@class='header-btn vertical-center']/span[@class='header-underline-btn']").text'''
+time.sleep(5)
+r1 = EC.title_is('寒武纪CAIR平台')(driver)
+r2 = EC.title_contains('寒武纪CAIR平台')(driver)
+r3 = EC.text_to_be_present_in_element((By.CLASS_NAME,'pr6'),'管理员')(driver)
+print (r1)
+print (r2)
+print (r3)
+
+driver.quit()
+
+'''if users == user2
+    pass
+else:
+    raise AssertionError'''
 '''list1 = driver.find_element_by_id('jq3')
 list1.click()
 time.sleep(5)
