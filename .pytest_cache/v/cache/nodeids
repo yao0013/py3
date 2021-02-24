@@ -1,5 +1,4 @@
 [
   "test/test_001.py::test_answer",
-  "test/test_org.py::test_gp",
-  "test_test1.py::TestTest1::test_test1"
+  "test/test_org.py::test_gp"
 ]
