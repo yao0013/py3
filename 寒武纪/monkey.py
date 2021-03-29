@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from HTMLTestRunner import HTMLTestReport
 import pyautogui as page
 import random
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions 
 
 
 options = webdriver.ChromeOptions()
@@ -29,9 +31,12 @@ time.sleep(10)
 
 length = len(driver.find_elements_by_class_name("title"))
 
-for i in range(0,length):
+for i in range(0,1000):
+    a = random.randint(0,length)
     links = driver.find_elements_by_class_name("title")
-    link = links[i]
+    link = links[a]
     link.click()
+    time.sleep(1)
     driver.back()
-    time.sleep(3)
+    print(i)
+    time.sleep(2)
