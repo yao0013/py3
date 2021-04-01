@@ -1,5 +1,4 @@
 [
-  "test_test1.py::TestTest1::test_test1",
   "test/test_001.py::test_info",
   "test/test_modle.py::test_gp"
 ]

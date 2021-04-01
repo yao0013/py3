@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report1.html</h1>
-    <p>Report generated on 29-Mar-2021 at 10:58:51 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 01-Apr-2021 at 09:40:25 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -259,8 +259,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.5</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 0.99 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 5.48 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -271,12 +271,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-name">test/test_001.py::test_info</td>
-          <td class="col-duration">0.75</td>
+          <td class="col-duration">0.57</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
+            <div class="log">def test_info():<br/>&gt;       assert &#x27;OpenSSL 安全漏洞&#x27; in get_info()<br/><br/>test\test_001.py:27: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def get_info():<br/>        headers = {<br/>            &quot;Host&quot; : &quot;192.168.203.38&quot;,&quot;Connection&quot; : &quot;keep-alive&quot;,&quot;Content-Length&quot; : &quot;31&quot;,&quot;Accept&quot; : &quot;application/json, text/javascript, */*; q=0.01&quot;,&quot;X-Auth-Token&quot; : &quot;4bc714e7-6e89-3c3f-8182-eda2aefe99f6&quot;,&quot;X-Requested-With&quot; : &quot;XMLHttpRequest&quot;,&quot;User-Agent&quot; : &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36&quot;,&quot;Content-Type&quot; : &quot;application/x-www-form-urlencoded; charset=UTF-8&quot;,&quot;Accept-Encoding&quot; : &quot;gzip, deflate&quot;,&quot;Accept-Language&quot; : &quot;zh-CN,zh;q=0.9&quot;<br/>        }<br/>    <br/>        url = &#x27;http://192.168.203.38/api/security/crawler/vulnerability/search.do&#x27;<br/>    <br/>        datas = {&#x27;page.pageNum&#x27;: &#x27;1&#x27;,&#x27;page.pageSize&#x27;: &#x27;10&#x27;}<br/>    <br/>        resq = requests.post(url=url,headers=headers,data=datas)<br/>    <br/>        data1 = resq.json()<br/>    <br/>        gp = []<br/>    <br/>        for i in range(0,2):<br/>&gt;           gp.append(data1[&#x27;data&#x27;][&#x27;list&#x27;][i][&#x27;info&#x27;])<br/><span class="error">E           KeyError: &#x27;data&#x27;</span><br/><br/>test\test_001.py:21: KeyError<br/></div></td></tr></tbody></table></body></html>
