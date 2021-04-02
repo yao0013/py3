@@ -1,4 +1,5 @@
 [
   "test/test_001.py::test_info",
-  "test/test_modle.py::test_gp"
+  "test/test_modle.py::test_gp",
+  "\u98ce\u53d8/innoe.py::test_info"
 ]

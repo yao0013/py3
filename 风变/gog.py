@@ -5,6 +5,4 @@ class ReadCsv():
         r = csv.reader(open("D:\\listtest\\风变\\test_case.csv","r"))
         for i in r:
             item.append(i)
-        return item[5:6]
-re = ReadCsv()
-q = re.read_csv()
+        return item[1:]
