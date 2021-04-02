@@ -28,5 +28,3 @@ def test_info():
 
 if __name__ == "__main__":
     pytest.main(['-q','test\\test_001.py','--html=report1.html'])
-#TODO 使用csv导入各参数
-#TODO 使用GUI模式

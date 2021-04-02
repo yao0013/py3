@@ -6,7 +6,8 @@ import pytest
 #import jsonpath
 #TODO 使用jsonpath断言
 #TODO 使用csv导入各参数：进阶2，导入为参数
-#TODO 使用GUI模式
+#TODO for循环持续进行多个用例
+#TODO 使用GUI：延后吧，实现功能先
 re = ReadCsv()
 
 q = re.read_csv()
