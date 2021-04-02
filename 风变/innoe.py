@@ -12,9 +12,21 @@ re = ReadCsv()
 
 q = re.read_csv()
 
-p1 = q[0][0]
+p1 = q[2][1]
 
-print(p1)
+p2 = p1.split('#,')
+
+pa1 = p2[0]
+
+pa2 = p2[1]
+
+v1 =q[2][2]
+
+v2 = v1.split('#,')
+
+va1 = v2[0]
+
+va2 = v2[1]
 
 t1 = Get_token1()
 
@@ -31,7 +43,7 @@ def get_info():
 
     url = 'http://192.168.203.38/api/security/audit/archive/pageData.do'
     
-    datas = {'page.pageNum': '1','page.pageSize': '10'}
+    datas = {pa1 : va1,pa2 : va2}
 
     resq = requests.post(url=url,headers=headers,data=datas)
 
