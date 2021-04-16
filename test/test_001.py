@@ -28,3 +28,4 @@ def test_info():
 
 if __name__ == "__main__":
     pytest.main(['-q','test\\test_001.py','--html=report1.html'])
+
