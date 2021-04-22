@@ -1,0 +1,8 @@
+
+class InterfaceVars(object):
+    def __init__(self):
+        self.interface_vars = {}
+        self.backup_vars = {}
+
+
+ivs = InterfaceVars()

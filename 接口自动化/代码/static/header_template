@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+
+"""
+author: leo
+功能: 通过脚本自动生成的待测试用例
+"""
+import os
+import pytest
+import allure
+import pytz
+import time
+from string import Template
+from datetime import datetime
+from core.logs import CustomLogger
+from testcase.test_task_common import init_object
+import pytest_check as check
+from core.api import ApiHandler
+from core.case_parse.execute_unit import VarReplace, parse_interface_var
+from core.case_parse import execute_unit as eut
+from core.results import RS
+
+
+current_time = str(datetime.now(pytz.timezone("Asia/Shanghai")).strftime("%Y-%m-%d_%H-%M-%S"))
+file_name = os.path.basename(__file__).rstrip('.py')
+log_name = "{}_{}.log".format(file_name, current_time)
+log = CustomLogger(filename=log_name).logger

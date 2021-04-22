@@ -2,10 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"name": "测试vscode",
-			"path": "..\\测试vscode"
 		}
 	],
 	"settings": {
